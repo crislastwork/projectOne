@@ -8,7 +8,7 @@
 error_reporting(-1);
 require_once("config.inc.php");
 include 'querys_BD.php';
-include_once "includes/langDetect.php";
+
 function data($valor)
 {
     $timer = explode(" ",$valor);
@@ -101,7 +101,7 @@ switch ($_GET["accion"])
                 break;
         }
 
-	$meses=array("","$GENER","$FEBRER","$MARÇ","$ABRIL","$MAIG","$JUNY","$JULIOL","$AGOST","$SETEMBRE","$OCTUBRE","$NOVEMBRE","$DESEMBRE");
+	$meses=array("","Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre");
 		
 	/* Calculem els dies de la setmana anterior al dia 1 del mes en curs */
 	$diesabans=$primeromes-1;
@@ -120,10 +120,10 @@ switch ($_GET["accion"])
 	else $totalfilas2=intval(($tope2/7));
 			
 	/* Printem la taula */
-	echo "<div id='calendari_left'><div class='mes_cal'>".$meses[intval($data_calendari[1])]." de ".$data_calendari[0]."</div>";
+	echo "<h2>Calendari TRANSBRAVA: ".$meses[intval($data_calendari[1])]." de ".$data_calendari[0]."</h2>";
 	if (isset($mostrar)) echo $mostrar;
 			
-	echo "<div id='cal'><table id=".$ruta." class='calendari' cellspacing='0' cellpadding='0'>";
+	echo "<table id=".$ruta." class='calendari' cellspacing='0' cellpadding='0'>";
 	echo "<tr><th>Dilluns</th><th>Dimarts</th><th>Dimecres</th><th>Dijous</th><th>Divendres</th><th>Dissabte</th><th>Diumenge</th></tr><tr>";
 	
 	/* Inici de les files */
@@ -157,13 +157,13 @@ switch ($_GET["accion"])
                 if ($i==7 || $i==14 || $i==21 || $i==28 || $i==35 || $i==42) {echo "<tr>";$tr+=1;}
             }
         }
-	echo "</table></div></div>";
+	echo "</table>";
         
         /* Printem la taula2 */
-	echo "<div id='calendari_right'><div class='mes_cal'>".$meses[intval($data_calendari2[1])]." de ".$data_calendari2[0]."</div>";
+	echo "<h2>Calendari TRANSBRAVA: ".$meses[intval($data_calendari2[1])]." de ".$data_calendari2[0]."</h2>";
 	if (isset($mostrar)) echo $mostrar;
 			
-	echo "<div id='cal'><table id=".$ruta." class='calendari' cellspacing='0' cellpadding='0'>";
+	echo "<table id=".$ruta." class='calendari' cellspacing='0' cellpadding='0'>";
 	echo "<tr><th>Dilluns</th><th>Dimarts</th><th>Dimecres</th><th>Dijous</th><th>Divendres</th><th>Dissabte</th><th>Diumenge</th></tr><tr>";
 	
 	/* Inici de les files */
@@ -197,11 +197,11 @@ switch ($_GET["accion"])
             }
 
         }
-	echo "</table></div></div>";
+	echo "</table>";
 			
 	$mesanterior=date("Y-m-d",mktime(0,0,0,$data_calendari[1]-1,01,$data_calendari[0]));
 	$messiguiente=date("Y-m-d",mktime(0,0,0,$data_calendari[1]+1,01,$data_calendari[0]));
-	echo "<div id='ant'><a href='#' rel='$mesanterior' class='anterior'><</a><a href='#' class='siguiente' rel='$messiguiente'>></a></div>";
+	echo "<p> &laquo; <a href='#' rel='$mesanterior' class='anterior'>Anterior</a> - <a href='#' class='siguiente' rel='$messiguiente'>Següent</a> &raquo;</p>";
 	break;
     }
 }
