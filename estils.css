@@ -1,0 +1,238 @@
+/**
+ * @author Cristina Alemany de Puig <adp.cris@gmail.com>
+ * @version 1.0
+ * 
+ */
+#agenda{
+    margin:10px;
+    width:960px;
+    margin:0 auto;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+    height: 387px;
+}
+#agenda h1{
+    text-align:left;
+    margin:0;
+    font-size:1.5em;
+    color:#312c2b
+}
+#agenda h2{
+    text-align:left;
+    margin:0;
+    font-size:1em;
+    color:#969696
+}
+#agenda table.calendari {
+    margin:auto;
+    width:100%;
+
+    float: left;
+}
+.calendari th {
+
+    font-weight:300;
+    background:#666;
+    color:white;
+    padding:10px;
+    font-size:12px;
+}
+.calendari td{
+    padding:10px;
+    text-align:center;
+    cursor: pointer;
+    width:100px;
+    white-space:pre-line;
+    font-size:24px;
+}
+.calendari td.eventa {
+    background-color:#78D15E;
+    color: white;
+} /* COLOR QUE HI HA EVENT FONS CANVIAT i afegit tipus d'events  */
+
+.calendari td.eventb {
+    background-color:orange;
+}
+.calendari td.eventc {
+    background-color:red;
+}
+.calendari td.capevent {
+    color:#999;
+    background-color: #E3E3E3;
+}
+.calendari td.desactivada {
+    background:#FFFFFF;
+}
+.calendari td.hoy{
+    font-weight:500;
+    color:#333;
+}
+/*        .calendari td.futur{background-color:yellow;} /*  efegito meu */
+.calendari td.event.futur{
+    background-color:red;
+}
+.agregar_event{
+    background-color:red;
+} /* afegit, aquest no existia */
+a.agregar_event{
+    position:relative;
+    margin-left:25px;
+    margin-top:-25px} 
+.calendari td a{
+    color:black;
+    text-decoration:none;
+} 
+/* el poso en un altre color */
+.verde,.ok{
+    font-weight:bold;
+    color:green;
+}
+.rojo{
+    font-size:125% !important;
+    font-weight:bold;
+    color:red;
+}
+.siguiente{
+    color: white;
+    text-decoration: none;
+    margin-left: 940px;
+    margin-top: -172px;
+    float: left;
+    background-color: #35AFF9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 6px;
+    padding-right: 6px
+}
+.anterior{
+    color: white;
+    text-decoration: none;
+    margin-left: 0px;
+    margin-top: -172px;
+    float: left;
+    background-color: #35AFF9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+#mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+    width:100%;
+    height:100%
+}
+#resposta_form,.resposta{
+    clear:both;
+    padding:20px 0;
+} /*  aixo no ho usem   */
+.window {
+    position:fixed;
+    left:0;
+    top:0;
+    width:440px;
+    height:400px;
+    display:none;
+    z-index:9999;
+    padding:20px;
+    background-color:#ffffff;
+}
+.window h2{
+    float:left;
+    padding:0 0 20px 0;
+    text-align:left;
+    margin:0;
+    font-size:1em;
+    color:#969696
+}
+.window a.close{
+    float:right;
+    font-size:11px !important
+}
+.window p{
+    margin:5px 0;
+    font-size:12px;
+
+    text-align:left;
+    padding:5px;
+    clear:both;
+}
+.window form{
+    padding:20px 0 !important;
+    clear:both
+}
+.window input[type=text]{
+    border:1px solid #ccc;
+    background:white;
+    width:200px;
+    padding:10px
+}
+.window input.enviar{
+    border:1px solid #ccc;
+    background:white;
+    width:120px;
+    background:#ccc;
+    margin:0 0 0 10px;
+    padding:10px
+}
+.window p img{
+    vertical-align:middle;
+    float:right;
+    border:0;
+    width:16px;
+    height:16px
+}
+#formulari {
+    margin-left:485px;
+    text-align:center;
+    height:900px
+}
+.borders{
+    background-color: #35AFF9!important;
+    border: 1px solid #4FBBFC;
+    color:white!important;
+}
+#calendari_left{
+    float: left;
+    width: 450px;
+    height: 369px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+}
+#calendari_right{
+    float: left;
+    width: 450px;
+    height: 369px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+}
+.mes_cal{
+    text-align: center;
+    background-color: #d5d5d5;
+    padding: 10px;
+    width: 100px;
+    float: left;
+}
+#cal{
+    border-bottom: 1px solid #d5d5d5;
+    height: 329px;
+    margin-top: 0px;
+    border-right: 1px solid #d5d5d5;
+    float: left;
+}
+#ant{
+    float: left
+}
+#calendaris{
+    display: none;
+}
+#info_cayaks{
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+    padding: 20px;
+    color: #333;
+}
